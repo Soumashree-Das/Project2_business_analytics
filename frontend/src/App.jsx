@@ -216,7 +216,7 @@ function MainApp() {
               '🔄 Checking...'
             }
             <br />
-            <small>URL: {base_url}</small>
+            {/* <small>URL: {base_url}</small> */}
           </div>
 
           {!isValidEmail ? (
@@ -236,12 +236,12 @@ function MainApp() {
                 Verify Email
               </button>
               <div className="text-sm text-gray-600">
-                <p>Authorized emails:</p>
+                {/* <p>Authorized emails:</p>
                 <ul className="text-xs mt-1">
                   {Object.keys(allowedEmails).map(email => (
                     <li key={email}>• {email}</li>
                   ))}
-                </ul>
+                </ul> */}
               </div>
             </form>
           ) : (
