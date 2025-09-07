@@ -1,7 +1,8 @@
 {
   "name": "ab-test-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A/B Test Data Collection Backend",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,7 +11,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
