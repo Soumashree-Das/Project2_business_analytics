@@ -42,3 +42,5 @@ timestamp,event,variant,meal
 2025-09-07T07:18:34.381Z,assigned_variant,list,
 2025-09-07T07:18:38.431Z,order_click,list,Chinon Apple Tarts
 2025-09-07T07:18:40.599Z,order_click,list,Chocolate Avocado Mousse
+2025-09-07T07:36:12.273Z,assigned_variant,list,
+2025-09-07T07:36:12.281Z,assigned_variant,list,
