@@ -643,9 +643,9 @@ import "./index.css";
 
 // Main App Component
 function MainApp() {
-  const [meals, setMeals] = useState([]);
+  const [, setMeals] = useState([]);
   const [view, setView] = useState("");
-  const [logs, setLogs] = useState([]);
+  //const [logs, setLogs] = useState([]);
   const [email, setEmail] = useState("");
   const [isValidEmail, setIsValidEmail] = useState(false);
   const [randomMeals, setRandomMeals] = useState([]);
@@ -701,6 +701,7 @@ function MainApp() {
         }
       })
       .catch((err) => console.error(err));
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 
   const handleOrderClick = (meal) => {
@@ -757,7 +758,7 @@ function MainApp() {
         )}
       </div>
     );
-  }
+}
 
   // Original A/B test UI
   return (
@@ -852,9 +853,19 @@ function MainApp() {
             {view.toUpperCase()} ({view === "grid" ? "Version A" : "Version B"})
           </span>
         </div>
-        <a href="/download-csv-a-b-test-project2" className="download-link">
-          Admin Access
-        </a>
+        <div className="flex flex-col items-center gap-3 mt-10">
+          <a
+            href="https://forms.gle/1KKz5WKmbNDCwB3y6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="feedback-btn"
+          >
+          Fill our Feedback Form
+          </a>
+        </div>
+          <a href="/download-csv-a-b-test-project2" className="download-link">
+            Admin Access
+          </a>
       </footer>
     </div>
   );

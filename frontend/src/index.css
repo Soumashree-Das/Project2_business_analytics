@@ -1,5 +1,5 @@
 
-
+@import "tailwindcss";
 /* Reset and Base Styles */
 * {
   margin: 0;
@@ -461,4 +461,27 @@ body {
   border-radius: 4px;
   text-decoration: none;
   color: #333;
+}
+
+.footer .feedback-btn {
+  background: linear-gradient(45deg, #ff6b00, #ff9900);
+  color: white;
+  font-weight: 600;
+  padding: 12px 24px;
+  margin-top: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(255, 107, 0, 0.3);
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.footer .feedback-btn:hover {
+  background: linear-gradient(45deg, #ff9900, #ff6b00);
+  transform: translateY(-2px);
+}
+
+.footer .feedback-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(255, 107, 0, 0.2);
 }
