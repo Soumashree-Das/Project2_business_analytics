@@ -209,10 +209,10 @@ app.use((req, res) => {
 app.listen(PORT, () => {
   console.log(`✅ Backend server running on port ${PORT}`);
   console.log(`🌐 Frontend URL: ${FRONTEND_URL}`);
-  console.log(`📊 Health check: http://localhost:${PORT}/health`);
-  console.log(`📥 Download CSV: http://localhost:${PORT}/download`);
-  console.log(`📄 Direct CSV: http://localhost:${PORT}/csv`);
-  console.log(`📋 Logs JSON: http://localhost:${PORT}/logs`);
+  console.log(`📊 Health check: ${process.env.BACKEND_URL}/health`);
+  console.log(`📥 Download CSV: ${process.env.BACKEND_URL}/download`);
+  console.log(`📄 Direct CSV: ${process.env.BACKEND_URL}/csv`);
+  console.log(`📋 Logs JSON: ${process.env.BACKEND_URL}/logs`);
 });
 
 
