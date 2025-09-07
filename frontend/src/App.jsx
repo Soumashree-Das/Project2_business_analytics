@@ -14,7 +14,7 @@
 //     setView(randomView);
 
 //     // Log assignment to backend
-//     fetch("http://localhost:5000/log", {
+//     fetch(`${base_url}/log", {
 //       method: "POST",
 //       headers: { "Content-Type": "application/json" },
 //       body: JSON.stringify({
@@ -41,7 +41,7 @@
 
 //   // Track clicks on "Order Now"
 //   const handleOrderClick = (meal) => {
-//     fetch("http://localhost:5000/log", {
+//     fetch(`${base_url}/log", {
 //       method: "POST",
 //       headers: { "Content-Type": "application/json" },
 //       body: JSON.stringify({
@@ -173,7 +173,7 @@
 //         {/* <button onClick={exportToCSV} className="export-btn">⬇ Export Results</button> */}
 //         <button
 //           onClick={() =>
-//             (window.location.href = "http://localhost:5000/download")
+//             (window.location.href = `${base_url}/download")
 //           }
 //           className="export-btn"
 //         >
@@ -216,7 +216,7 @@
 //     const randomView = Math.random() < 0.5 ? "grid" : "list";
 //     setView(randomView);
 
-//     fetch("http://localhost:5000/log", {
+//     fetch(`${base_url}/log", {
 //       method: "POST",
 //       headers: { "Content-Type": "application/json" },
 //       body: JSON.stringify({
@@ -241,7 +241,7 @@
 //   }, [location]);
 
 //   const handleOrderClick = (meal) => {
-//     fetch("http://localhost:5000/log", {
+//     fetch(`${base_url}/log", {
 //       method: "POST",
 //       headers: { "Content-Type": "application/json" },
 //       body: JSON.stringify({
@@ -285,7 +285,7 @@
 //           <div className="download-section">
 //             <p>Access granted for: {email}</p>
 //             <button
-//               onClick={() => (window.location.href = "http://localhost:5000/download")}
+//               onClick={() => (window.location.href = `${base_url}/download")}
 //               className="export-btn"
 //             >
 //               ⬇ Download CSV
@@ -446,7 +446,7 @@
 //     const randomView = Math.random() < 0.5 ? "grid" : "list";
 //     setView(randomView);
 
-//     fetch("http://localhost:5000/log", {
+//     fetch(`${base_url}/log", {
 //       method: "POST",
 //       headers: { "Content-Type": "application/json" },
 //       body: JSON.stringify({
@@ -471,7 +471,7 @@
 //   }, [location]);
 
 //   const handleOrderClick = (meal) => {
-//     fetch("http://localhost:5000/log", {
+//     fetch(`${base_url}/log", {
 //       method: "POST",
 //       headers: { "Content-Type": "application/json" },
 //       body: JSON.stringify({
@@ -515,7 +515,7 @@
 //           <div className="download-section">
 //             <p>Access granted for: {email}</p>
 //             <button
-//               onClick={() => (window.location.href = "http://localhost:5000/download")}
+//               onClick={() => (window.location.href = `${base_url}/download")}
 //               className="export-btn"
 //             >
 //               ⬇ Download CSV
@@ -641,6 +641,8 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import "./index.css";
 
+const base_url = import.meta.env.VITE_BACKEND_URL;
+
 // Main App Component
 function MainApp() {
   const [, setMeals] = useState([]);
@@ -675,7 +677,7 @@ function MainApp() {
     const randomView = Math.random() < 0.5 ? "grid" : "list";
     setView(randomView);
 
-    fetch("http://localhost:5000/log", {
+    fetch(`${base_url}/log`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -705,7 +707,7 @@ function MainApp() {
   }, [location]);
 
   const handleOrderClick = (meal) => {
-    fetch("http://localhost:5000/log", {
+    fetch(`${base_url}/log`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -749,7 +751,7 @@ function MainApp() {
           <div className="download-section">
             <p>Access granted for: {email}</p>
             <button
-              onClick={() => (window.location.href = "http://localhost:5000/download")}
+              onClick={() => (window.location.href = `${base_url}/download`)}
               className="export-btn"
             >
               ⬇ Download CSV

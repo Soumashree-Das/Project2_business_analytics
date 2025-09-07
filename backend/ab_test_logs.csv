@@ -38,3 +38,7 @@ timestamp,event,variant,meal
 2025-09-06T13:45:08.622Z,order_click,grid,Christmas cake
 2025-09-06T13:45:12.738Z,order_click,grid,Corba
 2025-09-06T13:45:15.918Z,order_click,grid,Chick-Fil-A Sandwich
+2025-09-07T07:18:34.378Z,assigned_variant,list,
+2025-09-07T07:18:34.381Z,assigned_variant,list,
+2025-09-07T07:18:38.431Z,order_click,list,Chinon Apple Tarts
+2025-09-07T07:18:40.599Z,order_click,list,Chocolate Avocado Mousse
