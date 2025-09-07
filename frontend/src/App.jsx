@@ -184,7 +184,6 @@
 // //   );
 // // }
 
-
 // //v2
 
 // // import { useState, useEffect } from "react";
@@ -696,7 +695,7 @@
 //             price: (Math.random() * 400 + 100).toFixed(0),
 //           }));
 //           setMeals(mealsWithPrice);
-          
+
 //           // Select 10 random meals
 //           const shuffled = [...mealsWithPrice].sort(() => 0.5 - Math.random());
 //           setRandomMeals(shuffled.slice(0, 12));
@@ -884,11 +883,13 @@
 //   );
 // }
 
-
-
-
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import "./index.css";
 
 const base_url = import.meta.env.VITE_BACKEND_URL;
@@ -1009,34 +1010,50 @@ function MainApp() {
               ⬇ Download CSV
             </button>
              */}
+            {/* <button
+              onClick={async () => {
+                try {
+                  const response = await fetch(`${base_url}/download`);
+                  if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                  }
+
+                  // Create blob and download
+                  const blob = await response.blob();
+                  const url = window.URL.createObjectURL(blob);
+                  const a = document.createElement("a");
+                  a.style.display = "none";
+                  a.href = url;
+                  a.download = "ab_test_results.csv";
+                  document.body.appendChild(a);
+                  a.click();
+                  window.URL.revokeObjectURL(url);
+                  document.body.removeChild(a);
+                } catch (error) {
+                  console.error("Download failed:", error);
+                  alert("Failed to download CSV. Please try again.");
+                }
+              }}
+              className="export-btn"
+            >
+              ⬇ Download CSV
+            </button> */}
             <button
-  onClick={async () => {
-    try {
-      const response = await fetch(`${base_url}/download`);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      
-      // Create blob and download
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.style.display = 'none';
-      a.href = url;
-      a.download = 'ab_test_results.csv';
-      document.body.appendChild(a);
-      a.click();
-      window.URL.revokeObjectURL(url);
-      document.body.removeChild(a);
-    } catch (error) {
-      console.error('Download failed:', error);
-      alert('Failed to download CSV. Please try again.');
-    }
-  }}
-  className="export-btn"
->
-  ⬇ Download CSV
-</button>
+              onClick={() => {
+                console.log(
+                  "VITE_BACKEND_URL:",
+                  import.meta.env.VITE_BACKEND_URL
+                );
+                console.log("base_url:", base_url);
+                console.log("Full URL:", `${base_url}/download`);
+
+                // Try the download
+                window.location.href = `${base_url}/download`;
+              }}
+              className="export-btn"
+            >
+              ⬇ Download CSV
+            </button>
           </div>
         )}
       </div>
